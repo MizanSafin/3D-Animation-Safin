@@ -1,0 +1,178 @@
+*{
+    color: #fff;
+}
+
+.img_wrapper{
+    height: 100vh;
+    background: linear-gradient(to right, rgb(60, 74, 100),rgb(3, 3, 17));
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sliding_img{
+    position: relative;
+    width: 200px;
+    height: 230px;
+    transform-style: preserve-3d;
+    animation: rotate 23s linear infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.sliding_img span{
+    position:absolute ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(320px);
+
+}
+.sliding_img span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: 2s;
+    cursor: pointer;
+    border: 2px dashed red;
+    box-shadow: 2px 1px 5px 4px pink;
+   
+}
+
+.sliding_img span:hover img {
+   transform: scale(1.2) translateY(-10%);
+}
+
+
+.name{
+    height: 50vh;
+    background: rgba(0,0,0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 90px;
+    color: #fff;
+    font-family: tahoma;
+    animation: glow 2s .5s ease-in-out infinite;
+}
+
+@keyframes glow{
+    0%{
+        text-shadow: 0px 0px 10px yellow,0px 0px 20px rgb(218, 218, 16),0px 0px 30px rgb(255, 255, 12),
+        0px 0px 40px rgb(238, 204, 13),0px 0px 50px rgb(255, 182, 50),0px 0px 60px rgb(255, 182, 55);
+    }
+    50%{
+        text-shadow: 0px 0px 5px rgb(255, 255, 1),0px 0px 10px rgb(255, 255, 168),0px 0px 20px rgb(247, 247, 110),
+        0px 0px 30px rgb(255, 9, 33),0px 0px 35px rgb(209, 6, 6),0px 0px 40px rgb(173, 27, 2);
+    }
+    100%{
+        text-shadow: 0px 0px 5px rgb(255, 255, 1),0px 0px 10px rgb(255, 255, 1),0px 0px 20px rgb(247, 247, 10),
+        0px 0px 30px rgb(166, 234, 255),0px 0px 35px rgb(129, 172, 185),0px 0px 40px rgb(135, 158, 165);
+    }
+}
+
+.text_wrapper{
+    position: relative;
+    background: url("/beautiful-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+    
+}
+
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 120px;
+    color:#fff;
+    /* -webkit-text-stroke: 1px #ff0000; */
+    padding: 10px;
+    
+    font-family: sans-serif;
+    background-color: #000;
+    /* mix-blend-mode: overlay; */
+    mix-blend-mode: multiply;
+}
+
+.wrapper_scroll{
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(to right,red ,green 20%, blue 80%);
+}
+
+.scroll{
+    position: absolute;
+    padding: 20px;
+    height: 200px;
+    width: 60%; 
+    text-align: justify;
+    margin: 10px auto;
+    top: 50%;
+    left: 50%;
+    font-size: 30px;
+    font-family:sans-serif;
+    transform: translate(-50% , -50%);
+    overflow-y: scroll;
+}
+
+.scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.content{
+    height: 200px;
+    width: 70%;
+    font-size: 50px;
+    margin: 20px auto;
+   
+}
+
+h3{
+    text-align: center;
+}
+[contenteditable]{
+    outline: none;
+}
+
+.list{
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 2px;
+}
+
+ul{
+    list-style: none;
+    font-size: 28px;
+   
+   
+}
+ul li::before{
+    content: "\21b3";
+    color: red;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 35px;
+    font-weight: bolder;
+    display: inline-block;
+}
